@@ -1,23 +1,16 @@
 import java.util.Scanner;
 
-// =====================================================================
-// EJERCICIO 3: CADENAS AMIGAS
-// =====================================================================
+// ================================== EJERCICIO 3: CADENAS AMIGAS ==================================
+
 public class Ejercicios {
 
-    /**
-     * S y T son amigas si existen u y v NO vacías tales que S = uv y T = vu.
-     * Es decir, T es S "rotada": se corta S en un punto, y las dos partes
-     * se intercambian de lugar.
-     * Ejemplo: S = "tokyo" = "to" + "kyo"  ->  T = "kyo" + "to" = "kyoto"
-     */
     public static boolean sonAmigas(String s, String t) {
         // Si tienen distinto tamaño, es imposible que sean amigas
         if (s.length() != t.length()) {
             return false;
         }
 
-        // u y v deben ser no vacías, así que se necesitan al menos 2 caracteres
+        // u y v deben ser no vacías, así que se necesitan al menos 2 caracteres.
         if (s.length() < 2) {
             return false;
         }
@@ -34,18 +27,18 @@ public class Ejercicios {
             }
         }
 
-        // Ningún punto de corte funcionó
+        // Si no encontramos ninguna división que funcione, no son amigas.
         return false;
     }
 
-    // Programa principal: lee las dos cadenas e imprime el resultado
+    // Programa principal: lee las dos cadenas e imprime el resultado.
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+        Scanner teclado = new Scanner(System.in);
 
         System.out.print("Ingrese la cadena S: ");
-        String s = sc.nextLine();
+        String s = teclado.nextLine();
         System.out.print("Ingrese la cadena T: ");
-        String t = sc.nextLine();
+        String t = teclado.nextLine();
 
         if (sonAmigas(s, t)) {
             System.out.println("\"" + s + "\" y \"" + t + "\" son AMIGAS.");
@@ -53,6 +46,6 @@ public class Ejercicios {
             System.out.println("\"" + s + "\" y \"" + t + "\" NO son amigas.");
         }
 
-        sc.close();
+        teclado.close();
     }
 }
